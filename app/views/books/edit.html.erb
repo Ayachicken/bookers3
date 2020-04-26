@@ -1,0 +1,16 @@
+<h1>Editing Book</h1>
+<% if @book.errors.any? %>
+  <div class="alert alert-warning">
+  	<%= pluralize(@book.errors.count, 'error') %>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+<%= form_for(@book) do |f| %>
+<div class="form_group">
+	<P>Title:</P>
+	<%= f.text_field :title, class:"form-control" %>
+	<p>Opinion:</p>
+	<%= f.text_field :Body, class:"form-control" %>
+	<%= f.submit "Update Book", class:"btn btn-primary" %>
+<% end %>

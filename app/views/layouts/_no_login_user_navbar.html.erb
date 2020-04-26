@@ -6,17 +6,17 @@
           <div class="collapse navbar-collapse justify-content-end" id="Navbar">
             <ul class='navbar-nav'>
               <li class="nav-item">
-                <a class="nav-link" href="/home"><span class="fas fa-home"></span> Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href=""><span class="fas fa-link"></span> About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/registrations/new"><span class="fas fa-edit"></span> Sign up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/session/new"><span class="fas fa-sign-in-alt"></span> Login</a>
-              </li>
+              <%= link_to ' Home', root_path, class: 'fas fa-home nav-link'%>
+            </li>
+            <li class="nav-item">
+              <%= link_to ' About', home_about_path, class: 'fas fa-link nav-link'%>
+            </li>
+            <li class="nav-item">
+              <%= link_to ' Sign up', new_user_registration_path, class: 'fas fa-edit nav-link'%>
+            </li>
+            <li class="nav-item">
+              <%= link_to ' Login', new_user_session_path, class: 'fas fa-sign-in-alt nav-link'%>
+            </li>
             </ul>
           </div>
         </nav>

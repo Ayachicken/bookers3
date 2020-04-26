@@ -1,2 +1,26 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+	<div class="row">
+		<%= render '/users/template' %>
+		</div>
+
+		<div class="col-md-8">
+			<h2 class=''>Books</h2>
+			<table class="table">
+				<tr>
+					<th></th>
+					<th>Title</th>
+					<th>Opinion</th>
+				</tr>
+				<tr>
+					<% @books.each do |book| %>
+					<td><%= attachment_image_tag @user, :profile_image, size:'40x40', format: 'jpg', class: "img-circle profile_image", fallback: "no_image.jpg" %>
+						
+					</td>
+					<td><%= book.title %></td>
+					<td><%= book.body %></td>
+					<% end %>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

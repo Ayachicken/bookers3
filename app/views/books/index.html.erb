@@ -1,0 +1,23 @@
+<div class='container'>
+	<div class='row'>
+		<%= render '/users/template' %>
+	</div>
+	<div class="col-md-6">
+			<h2 class=''>Books</h2>
+			<table class="table">
+				<tr>
+					<th></th>
+					<% @books.each do |book| %>
+					<th>Title</th>
+						<%= book.title %>
+					<th>Opinion</th>
+						<%= book.body %>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+</div>

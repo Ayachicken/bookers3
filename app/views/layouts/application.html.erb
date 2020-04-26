@@ -11,25 +11,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='mb-5'>
-    
+  <body>
     <header>
     <% if user_signed_in? %>
-      <%= render 'layouts/login_user_nabvar' %>
+      <%= render 'layouts/login_user_navbar' %>
     <% else %>
-      <%= render 'layouts/no_login_user_nabvar' %>
+      <%= render 'layouts/no_login_user_navbar' %>
     <% end %>
     </header>
 
-  <div class='container'>
-    <div class='row align-items-center'>
-      <div class='col-lg-11'>
-        <%= yield %>
-        <booter class='text-right'>
-        <p class='mb-0 mr-3'>CopyRight Infratop.inc</p>
-        </booter>
+    <%= yield %>
+    
+    <div class="row align-items-center">
+      <div class="col-lg-11">
+        <footer class='text-right'>
+          <p class='mb-0 mr-3'>CopyRight Infratop.inc</p>
+        </footer>
       </div>
     </div>
-  </div>
   </body>
 </html>
