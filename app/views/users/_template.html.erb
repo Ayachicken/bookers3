@@ -1,25 +1,33 @@
-<div class="col-md-4 ">
-			<h2 class=''>User info</h2>
-			<%= attachment_image_tag @user, :profile_image, size:'100x100', format: 'jpg', class: "img-circle profile_image", fallback: "no_image.jpg" %>
+<div class="col-xs-3">
+	<h2 class=''>User info</h2>
+			<%= attachment_image_tag user, :profile_image, size:'100x100', format: 'jpg', class: "img-circle profile_image", fallback: "no_image.jpg" %>
 			<table class="table">
-				<tr><th>name</th><td><%= @user.name %></td></tr>
-				<tr><th>introduction</th><td><%= @user.introduction %></td></tr>
+				<tr>
+          <th>name</th><td><%= user.name %></td></tr>
+				<tr>
+          <th>introduction</th><td><%= user.introduction %></td>
+        </tr>
 			</table>
-			<div class='form'>
-			<h2>New book</h2>
-			<% if @book.errors.any? %>
-  				<div class="alert alert-warning">
-  				<%= pluralize(@book.errors.count, 'error') %>
+      <%= link_to "", edit_user_path(user.id), {class: "glyphicon glyphicon-wrench btn btn-default btn-block"} %><br><br>
+	<h2>New book</h2>
+    <div class='form'>
+			<% if book.errors.any? %>
+  			<div class="alert alert-warning">
+  				<%= pluralize(book.errors.count, 'error') %>
     			<ul>
-      			<% @book.errors.full_messages.each do |message| %>
+      			<% book.errors.full_messages.each do |message| %>
         		<li><%= message %></li>
-      			<% end %>
-      		<% end %>
-			<%= form_for(@book) do |f| %>
-              <p class=''>Title</p>
-              <%= f.text_field :title %>
-              <p class=''>Body</p>
-              <%= f.text_field :body %><br>
-              <%= f.submit 'Create Book' %>
             <% end %>
-		</div>
+          </ul>
+        </div>
+      <% end %>
+			<%= form_for(book) do |f| %>
+          <p class=''>Title:</p>
+          <%= f.text_field :title %>
+          <p class=''>Body:</p>
+          <%= f.text_field :body %>
+          <br><br>
+          <%= f.submit 'Create Book', class:"btn btn-primary" %>
+      <% end %>
+    </div>
+</div>

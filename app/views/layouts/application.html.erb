@@ -3,15 +3,17 @@
     <meta charaset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bookers3</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-jJ2L/Ujk8jWEwtIXPFEk3X+f20QKnj4IIscn+JZzxqkbAUC79idDdiAhAi2E7czT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="padding-top: 50px;">
+    <div class="container">
+    <div class="row">
+    <p class="notice col-xs-12" style="color:green;"><%= notice %></p>
+    </div>
+    </div>
     <header>
     <% if user_signed_in? %>
       <%= render 'layouts/login_user_navbar' %>
@@ -22,11 +24,13 @@
 
     <%= yield %>
     
-    <div class="row align-items-center">
-      <div class="col-lg-11">
-        <footer class='text-right'>
-          <p class='mb-0 mr-3'>CopyRight Infratop.inc</p>
-        </footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <footer class='text-right'>
+            <p class=''>CopyRight Infratop.inc</p>
+          </footer>
+        </div>
       </div>
     </div>
   </body>

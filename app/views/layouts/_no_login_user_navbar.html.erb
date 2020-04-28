@@ -1,22 +1,31 @@
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 nav-link:hover nav.sticky-top">
-          <a class="navbar-brand ml-3" href="#">Bookers</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="Navbar">
-            <ul class='navbar-nav'>
-              <li class="nav-item">
-              <%= link_to ' Home', root_path, class: 'fas fa-home nav-link'%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class='navbar-header'>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Navbar" aria-expanded="false">
+          <span class="sr-only">Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+         </button>
+      </div>
+      <div class="collapse navbar-collapse" id="Navbar">
+          <nav class='nav navbar-nav navbar-left'>
+              <span style='color: white; font-size: 20px;'>Bookers</span>
+          </nav>
+            <ul class='nav navbar-nav navbar-right'>
+              <li class="">
+              <%= link_to ' Home', root_path, class:"glyphicon glyphicon-home" %>
             </li>
-            <li class="nav-item">
-              <%= link_to ' About', home_about_path, class: 'fas fa-link nav-link'%>
+            <li class="">
+              <%= link_to ' About', home_about_path, class:"glyphicon glyphicon-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to ' Sign up', new_user_registration_path, class: 'fas fa-edit nav-link'%>
+            <li class="">
+              <%= link_to ' sign up', new_user_registration_path, class:"glyphicon glyphicon-edit" %>
             </li>
-            <li class="nav-item">
-              <%= link_to ' Login', new_user_session_path, class: 'fas fa-sign-in-alt nav-link'%>
+            <li class="">
+              <%= link_to ' Login', new_user_session_path, class:"glyphicon glyphicon-log-in" %>
             </li>
             </ul>
-          </div>
-        </nav>
+      </div>
+    </div>
+</nav>

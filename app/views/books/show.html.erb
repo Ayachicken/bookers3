@@ -1,5 +1,23 @@
 <div class='container'>
 	<div class='row'>
-		<%= render '/users/template' %>
+		<%= render '/users/template', book: @book, user: @user %>
+	<div class="col-xs-9">
+		<h2 class=''>Book details</h2>
+			<table class="table">
+				<tr>
+				</tr>
+				<tr>
+					<td><%= attachment_image_tag @book.user, :profile_image, size:'40x40', format: 'jpg', class: "img-circle profile_image", fallback: "no_image.jpg" %><br>
+						<%=link_to @book.user.name,  user_path(@book.user.id) %>
+					</td>
+					<td><%= @book.title %></td>
+					<td><%= @book.body %></td>
+					<% if @book.user == current_user %>
+					<td><%= link_to "Edit", edit_book_path(@book.id), class:"btn btn-success" %></td>
+					<td><%= link_to "Destroy", book_path(@book.id), method: :delete, class:"btn btn-danger" %></td>
+					<% end %>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
